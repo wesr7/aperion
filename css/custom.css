@@ -1,0 +1,34 @@
+nav {
+  box-shadow: none;
+  background-color: transparent; }
+  nav .nav-wrapper {
+    width: 70%;
+    margin: 0 auto; }
+  nav .brand-logo {
+    margin-top: 15px; }
+
+.parallax {
+  z-index: 0; }
+  .parallax img {
+    max-height: 100%;
+    max-width: 100%;
+    min-width: inherit;
+    min-height: inherit; }
+
+.parallax-container {
+  height: 200px; }
+
+.main-bg {
+  background: url("../images/home/top_bg.png") no-repeat;
+  background-size: cover; }
+
+.bottom-bg {
+  background: url("../images/home/bottom_bg.png") no-repeat;
+  background-size: cover;
+  position: relative; }
+  .bottom-bg img.absolute {
+    position: absolute;
+    right: 0;
+    bottom: 0; }
+
+/*# sourceMappingURL=custom.css.map */

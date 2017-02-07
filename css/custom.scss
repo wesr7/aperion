@@ -1,0 +1,42 @@
+$background-size: cover;
+
+nav {
+  box-shadow: none;
+  background-color: transparent;
+  .nav-wrapper {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .brand-logo {
+    margin-top: 15px;
+  }
+}
+// Parallax
+.parallax {
+  z-index: 0;
+  img {
+    max-height: 100%;
+    max-width: 100%;
+    min-width: inherit;
+    min-height: inherit;
+  }
+}
+.parallax-container {
+  height: 200px;
+}
+.main-bg {
+  background: url("../images/home/top_bg.png") no-repeat;
+  background-size: $background-size;
+}
+.bottom-bg {
+  background: url("../images/home/bottom_bg.png") no-repeat;
+  background-size: $background-size;
+  position: relative;
+  img.absolute {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
+
