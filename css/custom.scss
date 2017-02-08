@@ -25,10 +25,6 @@ nav {
 .parallax-container {
   height: 200px;
 }
-.main-bg {
-  background: url("../images/home/top_bg.png") no-repeat;
-  background-size: $background-size;
-}
 .bottom-bg {
   background: url("../images/home/bottom_bg.png") no-repeat;
   background-size: $background-size;
@@ -39,4 +35,21 @@ nav {
     bottom: 0;
   }
 }
+.main-bg {
+  background: url("../images/home/top_bg.png") no-repeat;
+  background-size: $background-size;
+}
+.messaging-bg {
+  background: url("../images/messaging/bg_gradient.png") no-repeat;
+  background-size: $background-size;
+}
+.platform-bg {
+  background: url("../images/platform/bg_gradient.png") no-repeat;
+  background-size: $background-size;
+}
+.voice-bg {
+  background: url("../images/voice/bg_gradient.png") no-repeat;
+  background-size: $background-size;
+}
+
 

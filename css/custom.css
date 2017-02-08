@@ -18,10 +18,6 @@ nav {
 .parallax-container {
   height: 200px; }
 
-.main-bg {
-  background: url("../images/home/top_bg.png") no-repeat;
-  background-size: cover; }
-
 .bottom-bg {
   background: url("../images/home/bottom_bg.png") no-repeat;
   background-size: cover;
@@ -30,5 +26,21 @@ nav {
     position: absolute;
     right: 0;
     bottom: 0; }
+
+.main-bg {
+  background: url("../images/home/top_bg.png") no-repeat;
+  background-size: cover; }
+
+.messaging-bg {
+  background: url("../images/messaging/bg_gradient.png") no-repeat;
+  background-size: cover; }
+
+.platform-bg {
+  background: url("../images/platform/bg_gradient.png") no-repeat;
+  background-size: cover; }
+
+.voice-bg {
+  background: url("../images/voice/bg_gradient.png") no-repeat;
+  background-size: cover; }
 
 /*# sourceMappingURL=custom.css.map */
