@@ -1,55 +1,121 @@
-$background-size: cover;
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700,800');
+// Colors
+$home-blue: #141d40;
+$secondary-dark-blue: #162145;
+$pink: #ff00df;
+$light-blue: #96bdff;
+$table-header: #51a3fb;
+$table-thin-lines: #454d6a;
 
+// Mixins
+@mixin after($content, $display, $height, $width, $color, $background-color) {
+    content: $content;
+    display: $display;
+    height: $height;
+    width: $width;
+    color: $color;
+    background-color: $background-color;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+}
+// Nav
 nav {
-  box-shadow: none;
-  background-color: transparent;
-  .nav-wrapper {
-    width: 70%;
-    margin: 0 auto;
-  }
-
-  .brand-logo {
-    margin-top: 15px;
-  }
+    box-shadow: none;
+    background-color: transparent;
+    .nav-wrapper {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .brand-logo {
+        margin-top: 15px;
+    }
+}
+// Custom Button
+.custom-button {
+    width: 55%;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-align: center;
+    padding: 12px 0;
+}
+.button-blue {
+    @extend .custom-button;
+    background-color: $home-blue;
+    color: $pink;
+}
+.button-pink {
+    @extend .custom-button;
+    border: 1px solid $pink;
+    color: $pink;
 }
 // Parallax
 .parallax {
-  z-index: 0;
-  img {
-    max-height: 100%;
-    max-width: 100%;
-    min-width: inherit;
-    min-height: inherit;
-  }
+    z-index: 0;
+    img {
+        max-height: 100%;
+        max-width: 100%;
+        min-width: inherit;
+        min-height: inherit;
+    }
 }
 .parallax-container {
-  height: 200px;
+    height: 200px;
+}
+// Home Page Layout
+.main-bg {
+    background: linear-gradient(to bottom, #ccdcfe, #53a6ff);
+    p {
+        font-weight: 300;
+        font-size: 20px;
+        margin: 20px 0 10px;
+        &.home-blue {
+            color: $home-blue;
+            font-weight: 400;
+        }
+    }
+    h1 {
+        font-weight: 700;
+        font-size: 3.5rem;
+        letter-spacing: 2px;
+        line-height: 120%;
+        margin: 0 0 1.68rem;
+    }
+    p,
+    h1 {
+        color: #fff;
+        text-transform: uppercase;
+    }
+    span {
+        color: #fff;
+        border-bottom: 4px solid $home-blue;
+    }
 }
 .bottom-bg {
-  background: url("../images/home/bottom_bg.png") no-repeat;
-  background-size: $background-size;
-  position: relative;
-  img.absolute {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-  }
+    background: url("../images/home/bottom_bg.png") no-repeat;
+    background-size: cover;
+    position: relative;
+    img.absolute {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
 }
-.main-bg {
-  background: url("../images/home/top_bg.png") no-repeat;
-  background-size: $background-size;
-}
-.messaging-bg {
-  background: url("../images/messaging/bg_gradient.png") no-repeat;
-  background-size: $background-size;
+
+
+
+
+
+.secondary-gradient-bg {
+    background: url("../images/messaging/bg_gradient.png") no-repeat;
+    background-size: cover;
 }
 .platform-bg {
-  background: url("../images/platform/bg_gradient.png") no-repeat;
-  background-size: $background-size;
+    background: url("../images/platform/bg_gradient.png") no-repeat;
+    background-size: cover;
 }
 .voice-bg {
-  background: url("../images/voice/bg_gradient.png") no-repeat;
-  background-size: $background-size;
+    background: url("../images/voice/bg_gradient.png") no-repeat;
+    background-size: cover;
 }
-
-
