@@ -1,11 +1,16 @@
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800');
 // Colors
-$home-blue: #141d40;
+$main-blue: #141d40;
+$header-grey-text: #969696;
+$content-grey-text: #5e5e5e;
 $secondary-dark-blue: #162145;
+$black: #000;
+$white: #fff;
 $pink: #ff00df;
 $light-blue: #96bdff;
 $table-header: #51a3fb;
 $table-thin-lines: #454d6a;
+$grey-border:  1px solid #ccc;
 
 // Mixins
 @mixin after($content, $display, $height, $width, $color, $background-color) {
@@ -42,37 +47,34 @@ nav {
 }
 .button-blue {
     @extend .custom-button;
-    background-color: $home-blue;
+    background-color: $main-blue;
     color: $pink;
 }
 .button-pink {
     @extend .custom-button;
     border: 1px solid $pink;
     color: $pink;
-}
-// Parallax
-.parallax {
-    z-index: 0;
-    img {
-        max-height: 100%;
-        max-width: 100%;
-        min-width: inherit;
-        min-height: inherit;
-    }
-}
-.parallax-container {
-    height: 200px;
+    display: block;
+    margin: 0 auto;
+    font-weight: 300;
+    font-size: 12px;
 }
 // Home Page Layout
-.main-bg {
+.main-bg, .who-we-are-bg, .bottom-bg {
+    -webkit-background-size: cover;
+    background-size: cover;
+    height: 900px;
+}
+.pane-one {
     background: linear-gradient(to bottom, #ccdcfe, #53a6ff);
     p {
         font-weight: 300;
         font-size: 20px;
         margin: 20px 0 10px;
         &.home-blue {
-            color: $home-blue;
+            color: $main-blue;
             font-weight: 400;
+            margin: 35px 0;
         }
     }
     h1 {
@@ -84,38 +86,105 @@ nav {
     }
     p,
     h1 {
-        color: #fff;
+        color: $white;
         text-transform: uppercase;
     }
-    span {
-        color: #fff;
-        border-bottom: 4px solid $home-blue;
-    }
-}
-.bottom-bg {
-    background: url("../images/home/bottom_bg.png") no-repeat;
-    background-size: cover;
-    position: relative;
-    img.absolute {
+    img.pane {
+        max-width: 100%;
+        height: auto;
         position: absolute;
-        right: 0;
-        bottom: 0;
+    }
+    span {
+        color: $white;
+        border-bottom: 4px solid $main-blue;
+    }
+    .col.s8 {
+        margin-top: 10%;
+    }
+}
+.pane-two {
+    background-color: $white;
+    h1, h3, .right-align p, .center-align p  {
+        text-transform: uppercase;
+    }
+    img {
+        margin-top: 20%;
+    }
+    hr {
+        color: #ccc;
+        width: 35%;
+        border-style: solid;
+    }
+    .m2 > hr {
+        width: 0.01%;
+        height: 385px;
+        background-color: #ccc;
+        margin-top: -5%;
+    }
+    h1 {
+        color: $header-grey-text;
+        font-weight: 200;
+        font-size: 3.2rem;
+    }
+    h3 {
+        font-weight: 700;
+        font-size: 1.8rem;
+        margin-top: 10%;
+    }
+    h4 {
+        font-weight: 500;
+        font-size: 1.1rem;
+    }
+    .right-align p {
+        font-weight: 600;
+        font-size: 18px;
+        color: $black;
+    }
+    em {
+        font-style: normal;
+        color: $content-grey-text;
+        font-size: 11px;
+        font-weight: 500;
+        b {
+            color: $black;
+        }
+    }
+    .button-pink {
+        width: 35%;
+        margin: 1% 0;
+        display: inline-block;
+    }
+    .s12.m8 {
+        border: 2px solid #ccc;
+        padding: 3% 0 5%;
+        margin-top: -3.3%;
+        margin-bottom: 3%;
+    }
+}
+.pane-three {
+    background: url("../images/home/Apeiron_Home_Pane3.png") no-repeat;
+    .row {
+        padding-top: 50px;
+    }
+    h2, .s12 p:last-child {
+        text-transform: uppercase;
+        color: $white;
+        font-weight: 300;
+    }
+    h2 {
+        font-size: 1.56rem;
+    }
+    p {
+        color: $light-blue;
+        font-size: 13px;
+        font-weight: 500;
+    }
+    .s12 p:last-child {
+        font-size: 15px;
+        margin-top: 5%;
     }
 }
 
-
-
-
-
-.secondary-gradient-bg {
-    background: url("../images/messaging/bg_gradient.png") no-repeat;
-    background-size: cover;
-}
-.platform-bg {
-    background: url("../images/platform/bg_gradient.png") no-repeat;
-    background-size: cover;
-}
-.voice-bg {
-    background: url("../images/voice/bg_gradient.png") no-repeat;
-    background-size: cover;
+.secondary-bg {
+    background: linear-gradient(to bottom, #52a4fd, #162145);
 }

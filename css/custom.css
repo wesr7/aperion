@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700,800");
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800");
 body {
   font-family: 'Work Sans', sans-serif; }
 
@@ -24,61 +24,113 @@ nav {
 
 .button-pink {
   border: 1px solid #ff00df;
-  color: #ff00df; }
+  color: #ff00df;
+  display: block;
+  margin: 0 auto;
+  font-weight: 300;
+  font-size: 12px; }
 
-.parallax {
-  z-index: 0; }
-  .parallax img {
-    max-height: 100%;
-    max-width: 100%;
-    min-width: inherit;
-    min-height: inherit; }
+.main-bg, .who-we-are-bg, .bottom-bg {
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 900px; }
 
-.parallax-container {
-  height: 200px; }
-
-.main-bg {
+.pane-one {
   background: linear-gradient(to bottom, #ccdcfe, #53a6ff); }
-  .main-bg p {
+  .pane-one p {
     font-weight: 300;
     font-size: 20px;
     margin: 20px 0 10px; }
-    .main-bg p.home-blue {
+    .pane-one p.home-blue {
       color: #141d40;
-      font-weight: 400; }
-  .main-bg h1 {
+      font-weight: 400;
+      margin: 35px 0; }
+  .pane-one h1 {
     font-weight: 700;
     font-size: 3.5rem;
     letter-spacing: 2px;
     line-height: 120%;
     margin: 0 0 1.68rem; }
-  .main-bg p,
-  .main-bg h1 {
+  .pane-one p,
+  .pane-one h1 {
     color: #fff;
     text-transform: uppercase; }
-  .main-bg span {
+  .pane-one img.pane {
+    max-width: 100%;
+    height: auto;
+    position: absolute; }
+  .pane-one span {
     color: #fff;
     border-bottom: 4px solid #141d40; }
+  .pane-one .col.s8 {
+    margin-top: 10%; }
 
-.bottom-bg {
-  background: url("../images/home/bottom_bg.png") no-repeat;
-  background-size: cover;
-  position: relative; }
-  .bottom-bg img.absolute {
-    position: absolute;
-    right: 0;
-    bottom: 0; }
+.pane-two {
+  background-color: #fff; }
+  .pane-two h1, .pane-two h3, .pane-two .right-align p, .pane-two .center-align p {
+    text-transform: uppercase; }
+  .pane-two img {
+    margin-top: 20%; }
+  .pane-two hr {
+    color: #ccc;
+    width: 35%;
+    border-style: solid; }
+  .pane-two .m2 > hr {
+    width: 0.01%;
+    height: 385px;
+    background-color: #ccc;
+    margin-top: -5%; }
+  .pane-two h1 {
+    color: #969696;
+    font-weight: 200;
+    font-size: 3.2rem; }
+  .pane-two h3 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-top: 10%; }
+  .pane-two h4 {
+    font-weight: 500;
+    font-size: 1.1rem; }
+  .pane-two .right-align p {
+    font-weight: 600;
+    font-size: 18px;
+    color: #000; }
+  .pane-two em {
+    font-style: normal;
+    color: #5e5e5e;
+    font-size: 11px;
+    font-weight: 500; }
+    .pane-two em b {
+      color: #000; }
+  .pane-two .button-pink {
+    width: 35%;
+    margin: 1% 0;
+    display: inline-block; }
+  .pane-two .s12.m8 {
+    border: 2px solid #ccc;
+    padding: 3% 0 5%;
+    margin-top: -3.3%;
+    margin-bottom: 3%; }
 
-.secondary-gradient-bg {
-  background: url("../images/messaging/bg_gradient.png") no-repeat;
-  background-size: cover; }
+.pane-three {
+  background: url("../images/home/Apeiron_Home_Pane3.png") no-repeat; }
+  .pane-three .row {
+    padding-top: 50px; }
+  .pane-three h2, .pane-three .s12 p:last-child {
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 300; }
+  .pane-three h2 {
+    font-size: 1.56rem; }
+  .pane-three p {
+    color: #96bdff;
+    font-size: 13px;
+    font-weight: 500; }
+  .pane-three .s12 p:last-child {
+    font-size: 15px;
+    margin-top: 5%; }
 
-.platform-bg {
-  background: url("../images/platform/bg_gradient.png") no-repeat;
-  background-size: cover; }
-
-.voice-bg {
-  background: url("../images/voice/bg_gradient.png") no-repeat;
-  background-size: cover; }
+.secondary-bg {
+  background: linear-gradient(to bottom, #52a4fd, #162145); }
 
 /*# sourceMappingURL=custom.css.map */
