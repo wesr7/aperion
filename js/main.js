@@ -1,4 +1,7 @@
 $(document).ready(function(){
+    const voiceFeatures = {
+        'networkInterconnect' : 'Private IP connection to guarantee quality of service and eliminate public network risks.'
+    }
     if ($('.home-bg').length) {
         $('.parallax').parallax();
     }
@@ -18,5 +21,27 @@ $(document).ready(function(){
             focusOnSelect: true
         });
     }
+    // let columns = $('.')
+    // function colHeight(col) {
+    //     col.each(function(){
+    //         console.log(col);
+    //     });
+    // }
+
+    // colHeight()
+
+    const toggleContent = function(element, obj) {
+        $(element).click(function(){
+            let name = $(this).data('name');
+            const paragraph = $(this).next('p');
+            paragraph.toggleClass('up');
+            if (paragraph.is(':empty')) {
+                paragraph.append(obj[name]);
+            } else {
+                paragraph.empty();
+            }
+        });
+    }
+    toggleContent('h4', voiceFeatures)
 
 });
