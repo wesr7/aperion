@@ -46,6 +46,7 @@ $(document).ready(function(){
     const toggleContent = function(elements, obj) {
         $(elements).click(function(e){
             const info = $(this).data('name');
+            console.log(info);
             const paragraph = $(this);
             paragraph.toggleClass('up');
             if (paragraph.is(':empty')) {
@@ -55,9 +56,9 @@ $(document).ready(function(){
             }
         });
     }
-    if ($('.voice').length) {
+    if ($('.voice').length > 0) {
         toggleContent($('.features p'), voiceFeatures)
-    } else if ($('.messaging').length) {
+    } else if ($('.messaging').length > 0) {
         toggleContent($('.features p'), messagingFeatures)
     }
 
