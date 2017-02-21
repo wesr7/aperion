@@ -30,6 +30,10 @@ nav {
   font-weight: 300;
   font-size: 12px; }
 
+.inverse {
+  background-color: #ff00df;
+  color: #141d40; }
+
 hr {
   color: #ccc;
   width: 35%;
@@ -135,29 +139,85 @@ img.overlay {
     margin-top: 5%; }
 
 .secondary-bg {
-  background: linear-gradient(to bottom, #52a4fd, #162145); }
+  background: linear-gradient(to bottom, #52a4fd, #162145 35%); }
+  .secondary-bg img.free {
+    max-width: 100%;
+    max-height: 145%;
+    position: absolute;
+    bottom: 0;
+    right: 18%;
+    top: -20%; }
+  .secondary-bg h1, .secondary-bg h2, .secondary-bg h3, .secondary-bg h4, .secondary-bg h5, .secondary-bg hr, .secondary-bg .m4 p, .secondary-bg .m10 > p, .secondary-bg tr > td:first-of-type {
+    color: #fff; }
+  .secondary-bg h1, .secondary-bg h2, .secondary-bg h3, .secondary-bg h4, .secondary-bg h5 {
+    text-transform: uppercase;
+    font-weight: 200; }
   .secondary-bg .features p {
     text-align: center;
-    color: #96bdff; }
+    color: #96bdff;
+    font-size: 12px;
+    cursor: pointer; }
     .secondary-bg .features p::after {
       content: url("../images/voice/arrow_down.png");
       display: block; }
     .secondary-bg .features p.up::after {
       content: url("../images/voice/arrow_up.png"); }
   .secondary-bg h1 {
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 100;
     font-size: 5.7rem; }
+  .secondary-bg h2 {
+    color: #ff00df;
+    font-weight: 300;
+    font-size: 1.33rem;
+    margin: 0; }
+  .secondary-bg h4 {
+    text-transform: none;
+    font-weight: 400;
+    font-size: .9rem;
+    cursor: pointer; }
+  .secondary-bg h5 {
+    font-weight: 600;
+    font-size: 1.24rem; }
   .secondary-bg hr {
-    color: #fff;
     width: 28%; }
     .secondary-bg hr.vertical {
       width: 0.01%;
       height: 80px; }
+  .secondary-bg thead {
+    background-color: #51a3fb; }
+  .secondary-bg td, .secondary-bg th {
+    padding: 10px 5px 10px 35px; }
+  .secondary-bg th {
+    border-radius: 0px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 13px; }
+  .secondary-bg td {
+    font-size: 12px; }
+  .secondary-bg tr:first-of-type > td:nth-of-type(3) {
+    position: relative; }
+  .secondary-bg tr > td {
+    color: #96bdff;
+    font-weight: 600; }
+  .secondary-bg tr td:nth-of-type(3) > span {
+    color: #ff00df; }
+  .secondary-bg th:nth-child(2) {
+    width: 30%; }
+  .secondary-bg table.bordered > thead > tr, .secondary-bg table.bordered > tbody > tr {
+    border-bottom: 1px solid #454d6a; }
+  .secondary-bg .m4 p {
+    font-size: 12px;
+    margin: 0;
+    font-weight: 200; }
+  .secondary-bg .m10 > p {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 1.8; }
   .secondary-bg .button-blue {
     display: inline-block;
     width: 90%;
     margin-top: 10%; }
+  .secondary-bg .button-pink {
+    width: 100%;
+    font-weight: 600; }
 
 /*# sourceMappingURL=custom.css.map */
