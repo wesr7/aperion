@@ -24,10 +24,7 @@ $(document).ready(function(){
         'auto-responders' : 'Easy to use auto-response rules for inbound messages.'
     }
 
-    if ($('.home-bg').length) {
-        $('.parallax').parallax();
-    }
-    if ($('.platform-bg').length) {
+    if ($('.secondary-bg').length < 0) {
         $('.slider-for').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -43,10 +40,23 @@ $(document).ready(function(){
             focusOnSelect: true
         });
     }
+
+    const equalHeight = function(col) {
+        const tallestCol = $(col.sort((a, b) => $(b).height() - $(a).height())[0]).height();
+        const tallestP = $(col.children('p').sort((a, b) => $(b).height() - $(a).height())[0]).height();
+        console.log(tallestP);
+        col.each(function(){
+            col.height(tallestCol);
+            col.children('p').height(tallestP);
+        });
+    }
+    if ($('.main-bg').length){
+        equalHeight($('.pane-three .col'));
+    }
+
     const toggleContent = function(elements, obj) {
         $(elements).click(function(e){
             const info = $(this).data('name');
-            console.log(info);
             const paragraph = $(this);
             paragraph.toggleClass('up');
             if (paragraph.is(':empty')) {

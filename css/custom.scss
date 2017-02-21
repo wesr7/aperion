@@ -167,6 +167,9 @@ img.overlay {
         margin-top: -3.3%;
         margin-bottom: 3%;
     }
+     .col.s12.m4.offset-m1 {
+        text-align: right;
+    }
 }
 .pane-three {
     background-image: url("../images/home/Apeiron_Home_Pane3.png");
@@ -192,10 +195,13 @@ img.overlay {
         margin-top: 5%;
     }
 }
-// Vertical Line
-
 .secondary-bg {
     background: linear-gradient(to bottom, #52a4fd, #162145 35%);
+    &.voice {
+        th:nth-child(2) {
+        width: 30%;
+        }
+    }
     img.free {
         max-width: 100%;
         max-height: 145%;
@@ -204,7 +210,7 @@ img.overlay {
         right: 18%;
         top: -20%;
     }
-    h1, h2, h3, h4, h5, hr, .m4 p, .m10 > p, tr > td:first-of-type {
+    h1, h2, h3, h4, h5, hr, p, .m4 p, .m10 > p, tr > td:first-of-type {
         color: $white;
     }
     h1, h2, h3, h4, h5 {
@@ -212,19 +218,19 @@ img.overlay {
         font-weight: 200;
     }
     .features {
-        p {
+        p   {
             text-align: center;
             color: $light-blue;
             font-size: $p-font-size;
             cursor: pointer;
                 &::after {
-                content: url('../images/voice/arrow_down.png') ;
-                display: block;
+                    content: url('../images/voice/arrow_down.png') ;
+                    display: block;
                 }
                 &.up::after {
-                content: url('../images/voice/arrow_up.png');
+                    content: url('../images/voice/arrow_up.png');
                 }
-        }
+            }
     }
     h1 {
         font-size: 5.7rem;
@@ -278,9 +284,6 @@ img.overlay {
     tr td:nth-of-type(3) > span {
         color: $pink;
     }
-    th:nth-child(2) {
-        width: 30%;
-    }
     table.bordered > thead > tr, table.bordered > tbody > tr {
         border-bottom: 1px solid $table-thin-lines;
     }
@@ -294,6 +297,9 @@ img.overlay {
         font-size: $p-font-size;
         line-height: 1.8
     }
+    .button {
+        text-align: right;
+    }
     .button-blue {
         display: inline-block;
         width: 90%;
@@ -302,5 +308,45 @@ img.overlay {
     .button-pink {
         width: 100%;
         font-weight: 600;
+    }
+}
+@media only screen and (max-width: 992px) {
+    nav .brand-logo {
+        left: 0;
+        transform: none;
+    }
+}
+@media (max-width: 600px) {
+    .pane-one {
+        h1 {
+            font-size: 2.6rem;
+        }
+        .button-blue {
+            width: 100%;
+        }
+    }
+    .pane-two {
+        img {
+            margin-top: 0;
+        }
+        .col.s12.m4.offset-m1 {
+            text-align: left;
+        }
+    }
+    .secondary-bg {
+        h1 {
+            font-size: 3.7rem;
+        }
+        .col.s12.m4 {
+            text-align: center;
+        }
+        img.free {
+            right: 8%;
+        }
+        &.voice {
+            th:nth-child(2) {
+            width: 30%;
+            }
+        }
     }
 }
