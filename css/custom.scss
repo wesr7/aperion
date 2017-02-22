@@ -22,6 +22,16 @@ $p-font-size: 12px;
     background-color: $background-color;
 }
 
+@mixin icon-transform($transform, $display, $position) {
+    transform: $transform;
+    ms-transform: $transform; /* IE 9 */
+    -webkit-transform: $transform; /* Chrome, Safari, Opera */
+    -moz-transform: $transform;
+    -o-transform: $transform;
+    display: $display;
+    position: $position;
+}
+
 body {
     font-family: 'Work Sans', sans-serif;
 }
@@ -190,6 +200,32 @@ img.overlay {
         font-size: 13px;
         font-weight: 500;
     }
+    .m4 {
+        position: relative;
+    }
+    .row:first-of-type .m4 {
+        &:first-of-type h2:before, &:nth-of-type(2) h2:before {
+            @include icon-transform(scale(0.4), inline-block, absolute);
+            top: -75px;
+        }
+        &:first-of-type h2:before {
+            content: url('../images/home/home_icon_voice2X.png');
+            left: 0;
+        }
+        &:nth-of-type(2) h2:before {
+            content: url('../images/home/home_icon_messaging2X.png');
+            left: -40px;
+        }
+    }
+    .row:nth-of-type(2) .m4 {
+        &:first-of-type h2:before {
+            @include icon-transform(scale(0.4), inline-block, absolute);
+            content: url('../images/home/home_icon_platform2X.png');
+            top: -75px;
+            left: -25px;
+        }
+    }
+
     .s12 p:last-child {
         font-size: 15px;
         margin-top: 5%;
@@ -240,7 +276,6 @@ img.overlay {
         font-weight: 300;
         font-size: 1.33rem;
         margin: 0;
-
     }
     h4 {
         text-transform: none;
@@ -287,10 +322,26 @@ img.overlay {
     table.bordered > thead > tr, table.bordered > tbody > tr {
         border-bottom: 1px solid $table-thin-lines;
     }
-    .m4 p {
-        font-size: $p-font-size;
-        margin: 0;
-        font-weight: 200;
+    .m4 {
+        position: relative;
+        p {
+            font-size: $p-font-size;
+            margin: 0;
+            font-weight: 200;
+        }
+        &.offset-m1 > h2:before, &.offset-m2 > h2:before {
+            @include icon-transform(scale(0.5), inline-block, absolute);
+        }
+        &.offset-m1 > h2:before {
+            content: url('../images/voice/voice_icon_inbound2X.png');
+            top: -35%;
+            left: -38%;
+        }
+        &.offset-m2 > h2:before {
+            content: url('../images/voice/voice_icon_outbound2X.png');
+            top: -70%;
+            right: -48%;
+        }
     }
     .m10 > p {
         font-weight: 300;

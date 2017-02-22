@@ -44,13 +44,12 @@ $(document).ready(function(){
     const equalHeight = function(col) {
         const tallestCol = $(col.sort((a, b) => $(b).height() - $(a).height())[0]).height();
         const tallestP = $(col.children('p').sort((a, b) => $(b).height() - $(a).height())[0]).height();
-        console.log(tallestP);
         col.each(function(){
             col.height(tallestCol);
             col.children('p').height(tallestP);
         });
     }
-    if ($('.main-bg').length){
+    if ($('<div class="pane-one"></div>').length){
         equalHeight($('.pane-three .col'));
     }
 

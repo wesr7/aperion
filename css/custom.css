@@ -136,6 +136,38 @@ img.overlay {
     color: #96bdff;
     font-size: 13px;
     font-weight: 500; }
+  .pane-three .m4 {
+    position: relative; }
+  .pane-three .row:first-of-type .m4:first-of-type h2:before, .pane-three .row:first-of-type .m4:nth-of-type(2) h2:before {
+    transform: scale(0.4);
+    ms-transform: scale(0.4);
+    /* IE 9 */
+    -webkit-transform: scale(0.4);
+    /* Chrome, Safari, Opera */
+    -moz-transform: scale(0.4);
+    -o-transform: scale(0.4);
+    display: inline-block;
+    position: absolute;
+    top: -75px; }
+  .pane-three .row:first-of-type .m4:first-of-type h2:before {
+    content: url("../images/home/home_icon_voice2X.png");
+    left: 0; }
+  .pane-three .row:first-of-type .m4:nth-of-type(2) h2:before {
+    content: url("../images/home/home_icon_messaging2X.png");
+    left: -40px; }
+  .pane-three .row:nth-of-type(2) .m4:first-of-type h2:before {
+    transform: scale(0.4);
+    ms-transform: scale(0.4);
+    /* IE 9 */
+    -webkit-transform: scale(0.4);
+    /* Chrome, Safari, Opera */
+    -moz-transform: scale(0.4);
+    -o-transform: scale(0.4);
+    display: inline-block;
+    position: absolute;
+    content: url("../images/home/home_icon_platform2X.png");
+    top: -75px;
+    left: -25px; }
   .pane-three .s12 p:last-child {
     font-size: 15px;
     margin-top: 5%; }
@@ -206,10 +238,30 @@ img.overlay {
     color: #ff00df; }
   .secondary-bg table.bordered > thead > tr, .secondary-bg table.bordered > tbody > tr {
     border-bottom: 1px solid #454d6a; }
-  .secondary-bg .m4 p {
-    font-size: 12px;
-    margin: 0;
-    font-weight: 200; }
+  .secondary-bg .m4 {
+    position: relative; }
+    .secondary-bg .m4 p {
+      font-size: 12px;
+      margin: 0;
+      font-weight: 200; }
+    .secondary-bg .m4.offset-m1 > h2:before, .secondary-bg .m4.offset-m2 > h2:before {
+      transform: scale(0.5);
+      ms-transform: scale(0.5);
+      /* IE 9 */
+      -webkit-transform: scale(0.5);
+      /* Chrome, Safari, Opera */
+      -moz-transform: scale(0.5);
+      -o-transform: scale(0.5);
+      display: inline-block;
+      position: absolute; }
+    .secondary-bg .m4.offset-m1 > h2:before {
+      content: url("../images/voice/voice_icon_inbound2X.png");
+      top: -35%;
+      left: -38%; }
+    .secondary-bg .m4.offset-m2 > h2:before {
+      content: url("../images/voice/voice_icon_outbound2X.png");
+      top: -70%;
+      right: -48%; }
   .secondary-bg .m10 > p {
     font-weight: 300;
     font-size: 12px;
