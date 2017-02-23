@@ -1891,7 +1891,7 @@
             position = -position;
         }
 
-        if ($('.platform-bg').length) {
+        if ($('.platform').length) {
             x = _.positionProp == '0px';
         } else {
             x = _.positionProp == 'left' ? Math.ceil(position) + 'px' : '0px';
