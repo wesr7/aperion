@@ -66,7 +66,7 @@ nav {
     color: $pink;
     display: block;
     margin: 0 auto;
-    font-weight: 300;
+    font-weight: 600;
     font-size: 12px;
 }
 .inverse {
@@ -152,7 +152,7 @@ hr {
 }
 // Image Overlay
 img.overlay {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     position: absolute;
 }
@@ -167,25 +167,22 @@ img.overlay {
     color: $light-blue;
     font-size: 14px;
     cursor: pointer;
+
     .slick-track {
         margin: 0 auto;
     }
     .slick-slide {
-        height: 100px;
+        height: 115px;
         line-height: 100px;
         margin-right: 10px;
+        background-color: rgba(150, 189, 255, 0.1);
         span {
             display: inline-block;
             vertical-align: middle;
             line-height: normal;
         }
-    }
-    .slick-active {
-        background-color: rgba(150, 189, 255, 0.1);
-    }
-    .slick-current {
-        &.slick-active {
-            background-color: transparent;
+        &:focus {
+            outline: none;
         }
     }
 }
@@ -218,6 +215,9 @@ img.overlay {
 }
 .pane-one {
     background: linear-gradient(to bottom, #ccdcfe, #53a6ff);
+    .container {
+        margin-top: 10%;
+    }
     p {
         font-weight: 300;
         font-size: 20px;
@@ -297,11 +297,16 @@ img.overlay {
     }
      .col.s12.m4.offset-m1 {
         text-align: right;
+        text-transform: uppercase;
+        font-weight: bold;
     }
 }
 .pane-three {
     background-image: url("../images/home/Apeiron_Home_Pane3.png");
     background-repeat: no-repeat;
+    .button-pink {
+        margin: 30px auto;
+    }
     .row {
         padding-top: 50px;
     }
@@ -351,6 +356,15 @@ img.overlay {
 }
 .secondary-bg {
     background: linear-gradient(to bottom, #52a4fd, #162145 35%);
+    .slider-nav .slick-current.slick-active {
+        background-image: url('../images/platform/PlatformPage_PinkOutline.png');
+        display: block;
+        background-size: 100% 130px;
+        background-repeat: no-repeat;
+        background-position: 60% 0px;
+        height: 130px;
+        background-color: transparent;
+    }
     &.voice {
         th:nth-child(2) {
         width: 30%;
@@ -364,7 +378,7 @@ img.overlay {
         right: 18%;
         top: -20%;
     }
-    h1, h2, h3, h4, h5, hr, p, .m4 p, .m10 > p, tr > td:first-of-type {
+    h1, h2, h3, h4, h5, p, .m4 p, .m10 > p, tr > td:first-of-type {
         color: $white;
     }
     h1, h2, h3, h4, h5 {
@@ -411,9 +425,12 @@ img.overlay {
     hr {
         width: 28%;
         &.vertical {
-            width: 0.01%;
-            height: 80px;
+            width: 0.001%;
+            height: 115px;
         }
+    }
+    table {
+        position: relative;
     }
     thead {
         background-color: $table-header;
@@ -427,9 +444,33 @@ img.overlay {
         font-weight: 400;
         font-size: 13px;
     }
+    th:nth-child(3), th:nth-child(4) {
+        color: #fff;
+    }
     td {
         font-size: $p-font-size;
+        &.intl-box {
+            position: absolute;
+            background-color: #162145;
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+            border-radius: 0px;
+        }
     }
+    tr:nth-child(3) {
+        td:nth-child(7).intl-box {
+            bottom: 18%;
+            right: 24%;
+        }
+    }
+    tr:nth-child(2) {
+        td:nth-child(7).intl-box {
+            bottom: 18%;
+            right: 7.3%;
+        }
+    }
+
     tr:first-of-type > td:nth-of-type(3) {
         position: relative;
     }

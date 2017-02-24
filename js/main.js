@@ -24,7 +24,7 @@ $(document).ready(function(){
         'auto-responders' : 'Easy to use auto-response rules for inbound messages.'
     }
 
-    if ($('.secondary-bg').length > 0) {
+    if ($('.platform').length > 0) {
         $('.slider-for').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -40,6 +40,19 @@ $(document).ready(function(){
             focusOnSelect: true,
             arrows: false
         });
+        const trackWidth = $('.slider-for').width();
+        $('.slick-list').attr('style', 'padding: 0 5px');
+        $('.slick-track').attr('style', 'width: ' + $('.slider-for').width() + 'px;');
+        $('.slider-nav .slick-slide').each(function(){
+            $(this).attr('style', 'width: ' + ((trackWidth / 7) - 20) + 'px');
+        });
+        $('.slider-for .slick-track').attr('style', 'width: ' + trackWidth * 7 + 'px');
+        // $('.slider-nav .slick-slide').click(function(){
+        //     if (!$(this).hasClass('active')) {
+        //         $('.slider-nav .slick-slide').removeClass('active');
+        //         $(this).addClass('active')
+        //     }
+        // })
     }
 
     const equalHeight = function(col, child) {
@@ -77,15 +90,5 @@ $(document).ready(function(){
         toggleContent($('.features p'), voiceFeatures)
     } else if ($('.messaging').length > 0) {
         toggleContent($('.features p'), messagingFeatures)
-    }
-
-    if ($('.platform').length) {
-        const trackWidth = $('.slider-for').width();
-        $('.slick-list').attr('style', 'padding: 0 5px');
-        $('.slick-track').attr('style', 'width: ' + $('.slider-for').width() + 'px;');
-        $('.slider-nav .slick-slide').each(function(){
-            $(this).attr('style', 'width: ' + ((trackWidth / 7) - 20) + 'px');
-        });
-        $('.slider-for .slick-track').attr('style', 'width: ' + trackWidth * 7 + 'px');
     }
 });
