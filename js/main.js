@@ -47,12 +47,6 @@ $(document).ready(function(){
             $(this).attr('style', 'width: ' + ((trackWidth / 7) - 20) + 'px');
         });
         $('.slider-for .slick-track').attr('style', 'width: ' + trackWidth * 7 + 'px');
-        // $('.slider-nav .slick-slide').click(function(){
-        //     if (!$(this).hasClass('active')) {
-        //         $('.slider-nav .slick-slide').removeClass('active');
-        //         $(this).addClass('active')
-        //     }
-        // })
     }
 
     const equalHeight = function(col, child) {
@@ -66,29 +60,47 @@ $(document).ready(function(){
     if ($('.pane-one').length){
         equalHeight($('.pane-three .col'), $('.pane-three p'));
     }
-    if ($('.secondary-bg').length) {
+    if ($('.page-rapper').length) {
         equalHeight($('.features .col.s6'), $('.features i'));
     }
 
     const toggleContent = function(elements, obj) {
         $(elements).click(function(e){
-            const info = $(this).data('name');
-            const paragraph = $(this);
+            console.log('hello world');
+            e.preventDefault();
+            const paragraph = $(this).children('p');
+            const info = paragraph.data('name');
             paragraph.toggleClass('up');
             if (paragraph.is(':empty')) {
                 paragraph.append(obj[info]);
-                paragraph.parent().height(paragraph.parent().height() + $(this).height());
-                paragraph.parent().next('.col.s6').height(paragraph.parent().height());
+                paragraph.parents('.col.s6.m3').attr('style', 'margin-bottom: 10px;');
             } else {
-                paragraph.parent().next('.col.s6').height(paragraph.parent().height() - $(this).height());
-                paragraph.parent().height(paragraph.parent().height() - $(this).height());
+                paragraph.parents('.col.s6.m3').attr('style', 'margin-bottom: 0px;');
                 paragraph.empty();
             }
         });
     }
     if ($('.voice').length > 0) {
-        toggleContent($('.features p'), voiceFeatures)
+        toggleContent($('.features a'), voiceFeatures)
     } else if ($('.messaging').length > 0) {
-        toggleContent($('.features p'), messagingFeatures)
+        toggleContent($('.features a'), messagingFeatures)
+    }
+    $('a.right').click(function(e){
+        e.preventDefault();
+        $(this).css('display', 'none');
+        $('div.hide').removeClass('hide').addClass('menu');
+    });
+    $('a#menu_burger').click(function(e){
+        e.preventDefault();
+        $('div.menu').removeClass('menu').addClass('hide');
+        $('a.right').css('display', 'block');
+    });
+});
+
+$(window).scroll(function(){
+    if ($('body').scrollTop() > 90) {
+        $('nav').addClass('navDown')
+    } else if ($('body').scrollTop() < 90) {
+       $('nav').removeClass('navDown')
     }
 });

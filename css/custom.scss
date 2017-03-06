@@ -44,9 +44,71 @@ nav {
         margin: 0 auto;
     }
     .brand-logo {
-        margin-top: 15px;
+        margin-top: 8px;
     }
 }
+
+// Nav Animation
+@keyframes navColor {
+    from {background-color: transparent;}
+    to {background-color: #fff;}
+}
+@keyframes navHeight {
+    from {height: 0px;}
+    to {height: 70px;}
+}
+.navDown {
+    height: 70px;
+    background-color: #fff;
+    animation: navHeight .3s ease;
+    animations: navColor .3s ease;
+}
+
+// Menu Overlay
+@keyframes menuColor-in {
+    from {background-color: transparent;}
+    to {background-color: rgba(0,0,0,0.9);}
+}
+@keyframes textColor-in {
+    from {color: transparent;}
+    to {color: #fff;}
+}
+
+.menu {
+    display: block;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.9);
+    z-index: 1000;
+    animation: menuColor-in .5s cubic-bezier(.81,.01,.24,.44);
+    ul  {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    a   {
+        animation: textColor-in .5s cubic-bezier(.81,.01,.24,.44);
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 50px;
+        cursor: pointer;
+        line-height: 1.1em;
+        font-weight: 900;
+        &:hover {
+            color: #51a3fb;
+        }
+    }
+    #menu_burger    {
+        position: absolute;
+        right: 15%;
+        top: -1.2%;
+    }
+}
+
 // Custom Button
 .custom-button {
     width: 55%;
@@ -151,11 +213,12 @@ hr {
     }
 }
 // Image Overlay
-img.overlay {
+img.background {
     width: 100%;
     height: auto;
     position: absolute;
 }
+
 // Slick Slider
 .slick-slide img {
     width: 90%;
@@ -211,7 +274,7 @@ img.overlay {
     -webkit-background-size: cover;
     background-size: cover;
     background-position: 100% 100%;
-    height: 750px;
+    height: 850px;
 }
 .pane-one {
     background: linear-gradient(to bottom, #ccdcfe, #53a6ff);
@@ -354,7 +417,7 @@ img.overlay {
         margin-top: 5%;
     }
 }
-.secondary-bg {
+.page-rapper {
     background: linear-gradient(to bottom, #52a4fd, #162145 35%);
     .slider-nav .slick-current.slick-active {
         background-image: url('../images/platform/PlatformPage_PinkOutline.png');
@@ -536,6 +599,9 @@ img.overlay {
         width: 100%;
         font-weight: 600;
     }
+    .features a {
+        cursor: pointer;
+    }
 }
 @media only screen and (max-width: 992px) {
     nav .brand-logo {
@@ -560,7 +626,7 @@ img.overlay {
             text-align: left;
         }
     }
-    .secondary-bg {
+    .page-rapper {
         h1 {
             font-size: 3.7rem;
         }
@@ -574,6 +640,17 @@ img.overlay {
             th:nth-child(2) {
             width: 30%;
             }
+        }
+    }
+    nav {
+        .nav-wrapper {
+            width: 90%;
+        }
+    }
+    .menu   {
+        #menu_burger {
+            right: 5%;
+            top: -1.5%;
         }
     }
 }
