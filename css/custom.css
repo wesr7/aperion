@@ -359,6 +359,8 @@ img.background {
   .page-rapper h1, .page-rapper h2, .page-rapper h3, .page-rapper h4, .page-rapper h5 {
     text-transform: uppercase;
     font-weight: 200; }
+  .page-rapper.platform .container > .row + .row {
+    margin-bottom: 0px; }
   .page-rapper .features {
     position: relative; }
     .page-rapper .features p {
@@ -381,6 +383,9 @@ img.background {
       -o-transform: scale(0.4);
       display: block;
       position: relative; }
+    .page-rapper .features + .container > .row {
+      padding-bottom: 20px;
+      margin-bottom: 0px; }
   .page-rapper h1 {
     font-size: 5.7rem; }
   .page-rapper h2 {
@@ -490,6 +495,14 @@ img.background {
     font-weight: 600; }
   .page-rapper .features a {
     cursor: pointer; }
+
+footer p {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 300;
+  color: #162145; }
+footer .row {
+  margin-bottom: 0px; }
 
 @media only screen and (max-width: 992px) {
   nav .brand-logo {

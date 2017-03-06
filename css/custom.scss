@@ -135,6 +135,7 @@ nav {
     background-color: $pink;
     color: $main-blue;
 }
+
 // Icons
 .icon-inbound:before {
     content: url('../images/icons/icon_inbound2X.png');
@@ -212,6 +213,7 @@ hr {
         margin-top: -5%;
     }
 }
+
 // Image Overlay
 img.background {
     width: 100%;
@@ -249,7 +251,6 @@ img.background {
         }
     }
 }
-
 .slider-for {
     p {
         text-align: center;
@@ -269,6 +270,7 @@ img.background {
         content: url('../images/platform/arrow_right.png');
     }
 }
+
 // Home Page Layout
 .pane-one, .pane-two, .pane-three {
     -webkit-background-size: cover;
@@ -417,6 +419,8 @@ img.background {
         margin-top: 5%;
     }
 }
+
+// Inner Page Wrapper
 .page-rapper {
     background: linear-gradient(to bottom, #52a4fd, #162145 35%);
     .slider-nav .slick-current.slick-active {
@@ -448,6 +452,13 @@ img.background {
         text-transform: uppercase;
         font-weight: 200;
     }
+    &.platform {
+        .container > .row {
+            + .row {
+                margin-bottom: 0px;
+            }
+        }
+    }
     .features {
         position: relative;
         p   {
@@ -465,6 +476,10 @@ img.background {
         }
         .icon {
             @include icon-transform(scale(0.4), block, relative);
+        }
+        + .container > .row {
+            padding-bottom: 20px;
+            margin-bottom: 0px;
         }
     }
     h1 {
@@ -603,6 +618,20 @@ img.background {
         cursor: pointer;
     }
 }
+
+// Footer
+footer  {
+    p   {
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 300;
+        color: $secondary-dark-blue;
+    }
+    .row {
+        margin-bottom: 0px;
+    }
+}
+
 @media only screen and (max-width: 992px) {
     nav .brand-logo {
         left: 0;
