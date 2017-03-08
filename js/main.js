@@ -66,16 +66,15 @@ $(document).ready(function(){
 
     const toggleContent = function(elements, obj) {
         $(elements).click(function(e){
-            console.log('hello world');
             e.preventDefault();
             const paragraph = $(this).children('p');
             const info = paragraph.data('name');
             paragraph.toggleClass('up');
             if (paragraph.is(':empty')) {
                 paragraph.append(obj[info]);
-                paragraph.parents('.col.s6.m3').attr('style', 'margin-bottom: 10px;');
+                paragraph.parents('.col.s6.m3').css('margin-bottom', '10px');
             } else {
-                paragraph.parents('.col.s6.m3').attr('style', 'margin-bottom: 0px;');
+                paragraph.parents('.col.s6.m3').css('margin-bottom', '0px');
                 paragraph.empty();
             }
         });
@@ -98,9 +97,10 @@ $(document).ready(function(){
 });
 
 $(window).scroll(function(){
-    if ($('body').scrollTop() > 90) {
+    if ($(window).scrollTop() > 90) {
+        console.log('hello')
         $('nav').addClass('navDown')
-    } else if ($('body').scrollTop() < 90) {
+    } else if ($(window).scrollTop() < 90) {
        $('nav').removeClass('navDown')
     }
 });

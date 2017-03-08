@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800');
+
 // Colors
 $main-blue: #141d40;
 $header-grey-text: #969696;
@@ -12,6 +13,15 @@ $table-header: #51a3fb;
 $table-thin-lines: #454d6a;
 $p-font-size: 12px;
 
+@mixin prefix($declarations, $prefixes: ()) {
+  @each $property, $value in $declarations {
+    @each $prefix in $prefixes {
+      #{'-' + $prefix + '-' + $property}: $value;
+    }
+    #{$property}: $value;
+  }
+}
+
 // Mixins
 @mixin after($content, $display, $height, $width, $color, $background-color) {
     content: $content;
@@ -22,19 +32,34 @@ $p-font-size: 12px;
     background-color: $background-color;
 }
 
+
 @mixin icon-transform($transform, $display: inline-block, $position: absolute) {
-    transform: $transform;
-    ms-transform: $transform; /* IE 9 */
-    -webkit-transform: $transform; /* Chrome, Safari, Opera */
-    -moz-transform: $transform;
-    -o-transform: $transform;
+    @include prefix((
+        transform: $transform
+        ), webkit moz );
     display: $display;
     position: $position;
+}
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
 }
 
 body {
     font-family: 'Work Sans', sans-serif;
 }
+
 // Nav
 nav {
     box-shadow: none;
@@ -48,28 +73,31 @@ nav {
     }
 }
 
-// Nav Animation
-@keyframes navColor {
-    from {background-color: transparent;}
-    to {background-color: #fff;}
+
+@include keyframes(navColor) {
+    from { background-color: transparent;} to {background-color: #fff;}
 }
-@keyframes navHeight {
-    from {height: 0px;}
-    to {height: 70px;}
+@include keyframes(navHeight) {
+    from  { height: 0px; } to { height: 70px;}
 }
+
 .navDown {
     height: 70px;
     background-color: #fff;
-    animation: navHeight .3s ease;
-    animations: navColor .3s ease;
+    @include prefix((
+        animation: navHeight .3s ease
+        ), webkit moz );
+    @include prefix((
+        animation: navColor .3s ease
+        ), webkit moz );
 }
 
 // Menu Overlay
-@keyframes menuColor-in {
+@include keyframes(menuColor-in) {
     from {background-color: transparent;}
     to {background-color: rgba(0,0,0,0.9);}
 }
-@keyframes textColor-in {
+@include keyframes(textColor-in) {
     from {color: transparent;}
     to {color: #fff;}
 }
@@ -82,16 +110,21 @@ nav {
     left: 0;
     background-color: rgba(0,0,0,0.9);
     z-index: 1000;
-    animation: menuColor-in .5s cubic-bezier(.81,.01,.24,.44);
+    @include prefix((
+        animation: menuColor-in .5s cubic-bezier(.81,.01,.24,.44)
+        ), webkit moz );
     ul  {
         position: absolute;
         top: 50%;
         left: 50%;
+        @include prefix((transform: translate(-50%, -50%)), webkit moz);
         transform: translate(-50%, -50%);
         text-align: center;
     }
-    a   {
-        animation: textColor-in .5s cubic-bezier(.81,.01,.24,.44);
+    li > a   {
+        @include prefix((
+        animation: textColor-in .5s cubic-bezier(.81,.01,.24,.44)
+        ), webkit moz );
         text-transform: uppercase;
         color: #fff;
         font-size: 50px;
@@ -103,9 +136,7 @@ nav {
         }
     }
     #menu_burger    {
-        position: absolute;
-        right: 15%;
-        top: -1.2%;
+        float: right !important;
     }
 }
 
@@ -422,6 +453,9 @@ img.background {
 
 // Inner Page Wrapper
 .page-rapper {
+    .container:first-child  {
+        margin-bottom: 50px;
+    }
     background: linear-gradient(to bottom, #52a4fd, #162145 35%);
     .slider-nav .slick-current.slick-active {
         background-image: url('../images/platform/PlatformPage_PinkOutline.png');
@@ -435,6 +469,9 @@ img.background {
     &.voice {
         th:nth-child(2) {
         width: 30%;
+        }
+        img.responsive-img {
+            margin-bottom: 50px;
         }
     }
     img.free {
@@ -631,8 +668,19 @@ footer  {
         margin-bottom: 0px;
     }
 }
-
+@media (max-width: 1200px) {
+    .menu   {
+        #menu_burger {
+            top: -1.1%;
+        }
+    }
+}
 @media only screen and (max-width: 992px) {
+    .menu   {
+        #menu_burger {
+            top: -1.0%;
+        }
+    }
     nav .brand-logo {
         left: 0;
         transform: none;
@@ -669,6 +717,17 @@ footer  {
             th:nth-child(2) {
             width: 30%;
             }
+        }
+        .brand-logo {
+            img {
+                width: 70%;
+            }
+        }
+        .m4 .icon.icon-inbound, .m4 .icon.icon-outbound {
+            display: none;
+        }
+        .icon-outbound + h2 {
+            margin-top: 25px;
         }
     }
     nav {
