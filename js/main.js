@@ -1,27 +1,27 @@
 $(document).ready(function(){
     const voiceFeatures = {
-        'network-interconnect' : 'Private IP connection to guarantee quality of service and eliminate public network risks.',
-        'secure-trunking' : 'Encrypt communcications between your application and the Apeiron platform using SSL & IPSEC VPNs over the public net.',
+        'network-interconnect' : 'Private IP connection to guarantee quality of service and eliminate public network risks',
+        'secure-trunking' : 'Encrypt communcications between your application and the Apeiron platform using SSL & IPSEC VPNs over the public net',
         'call-recording' : 'Turn call recording on and off and retrieve recorded files via API or GUI',
         'fax-and-voicemail' : 'A la carte voicemail and fax features available for use with DIDs and TFNs.',
         'hd-voice-and-transcoding' : 'Super sweet RTP treatments',
-        'call-forwarding' : 'On-demand call forwarding features for managing your numbers.',
+        'call-forwarding' : 'On-demand call forwarding features for managing your numbers',
         'sms' : 'SMS enable any DID or Toll Free number to receive text messages',
-        'e911-cnam-and-listings' : 'Full Featured DID and TFNs suitable for any business use.',
-        'iot-endpoint-features' : 'Platform features that allow you to offload session and edge security functions.',
+        'e911-cnam-and-listings' : 'Full Featured DID and TFNs suitable for any business use',
+        'iot-endpoint-features' : 'Platform features that allow you to offload session and edge security functions',
         'full-featured-api' : 'To provision, use and mangage all of our voice services and features'
     }
     const messagingFeatures = {
-        'network-interconnect' : 'Security and Compliance features for platforms using private IP.',
+        'network-interconnect' : 'Security and Compliance features for platforms using private IP',
         'inbound-delivery' : 'Receive SMS by Webhook, Email or SMS',
         'rest-api' : 'Receive SMS by Webhook, Email or SMS',
-        'sdk-support' : 'Developer portal with SDK support for integration to your application.',
+        'sdk-support' : 'Developer portal with SDK support for integration to your application',
         'longcodes' : 'Local phone number and Toll Free phone number support',
         'shortcodes' : 'High volume and campaign specific SMS management',
         'compliance-features' : 'No-send list based on SMS unsubscribe/stop responses',
         'list-management' : 'Load and manage user lists in Apeiron dashboard',
         'campaign-management' : 'Bulk send operations using Lists',
-        'auto-responders' : 'Easy to use auto-response rules for inbound messages.'
+        'auto-responders' : 'Easy to use auto-response rules for inbound messages'
     }
 
     if ($('.platform').length > 0) {
@@ -57,7 +57,7 @@ $(document).ready(function(){
             child.height(tallestChild);
         });
     }
-    if ($('.pane-one').length){
+    if ($('.pane-one').length && $(window).width() > 780){
         equalHeight($('.pane-three .col'), $('.pane-three p'));
     }
     if ($('.page-rapper').length) {
@@ -89,8 +89,7 @@ $(document).ready(function(){
         $(this).css('display', 'none');
         $('div.hide').removeClass('hide').addClass('menu');
     });
-    $('a#menu_burger').click(function(e){
-        e.preventDefault();
+    $('a#menu_burger, .menu_list > li > a').click(function(e){
         $('div.menu').removeClass('menu').addClass('hide');
         $('a.right').css('display', 'block');
     });
@@ -98,7 +97,6 @@ $(document).ready(function(){
 
 $(window).scroll(function(){
     if ($(window).scrollTop() > 90) {
-        console.log('hello')
         $('nav').addClass('navDown')
     } else if ($(window).scrollTop() < 90) {
        $('nav').removeClass('navDown')
