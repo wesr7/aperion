@@ -60,6 +60,10 @@ body {
     font-family: 'Work Sans', sans-serif;
 }
 
+a {
+    cursor: pointer;
+}
+
 // Nav
 nav {
     box-shadow: none;
@@ -78,11 +82,11 @@ nav {
     from { background-color: transparent;} to {background-color: #fff;}
 }
 @include keyframes(navHeight) {
-    from  { height: 0px; } to { height: 70px;}
+    from  { height: 0px; } to { height: 60px;}
 }
 
 .navDown {
-    height: 70px;
+    height: 60px;
     background-color: #fff;
     @include prefix((
         animation: navHeight .3s ease
@@ -130,13 +134,16 @@ nav {
         font-size: 50px;
         cursor: pointer;
         line-height: 1.1em;
-        font-weight: 900;
+        font-weight: 300;
         &:hover {
             color: #51a3fb;
         }
     }
     #menu_burger    {
         float: right !important;
+        img {
+            transform: scale(1.8);
+        }
     }
 }
 
@@ -284,10 +291,22 @@ img.background {
     }
 }
 .slider-for {
+    p:first-of-type {
+        margin-top: 50px;
+    }
     p {
         text-align: center;
-        font-size: 10px;
-        margin-top: 50px;
+        font-size: 12px;
+    }
+
+    ul {
+        width: 50%;
+        font-size: 12px;
+        color: #fff;
+        margin: 0 auto;
+    }
+    .slick-slide:focus {
+        outline: none;
     }
     .slick-prev, .slick-next {
         top: 25%;
@@ -468,10 +487,11 @@ img.background {
         font-size: 15px;
         margin-top: 5%;
         text-align: center;
+        margin-bottom: 65px
     }
     #astro {
         position: absolute;
-        top: 320px;
+        bottom: 350px;
         right: 0;
         width: 500px;
     }
@@ -692,20 +712,7 @@ footer  {
     }
 }
 
-@media (max-width: 1200px) {
-    .menu   {
-        #menu_burger {
-            top: -1.1%;
-        }
-    }
-}
-
 @media only screen and (max-width: 992px) {
-    .menu   {
-        #menu_burger {
-            top: -1.0%;
-        }
-    }
     nav .brand-logo {
         left: 0;
         transform: none;
@@ -732,6 +739,19 @@ footer  {
     }
 }
 @media only screen and (max-width: 600px) {
+
+    .slider-for .slick-prev, .slider-for .slick-next {
+        top: 55%;
+        width: 55px;
+        height: auto;
+        transform: scale(0.3) translate(0, -25%);
+    }
+    .slick-next {
+        right: -22px;
+    }
+    .slick-prev {
+        left: -22px;
+    }
     .brand-logo {
         img {
             width: 70%;
@@ -786,7 +806,7 @@ footer  {
         }
         &.voice {
             th:nth-child(2) {
-            width: 30%;
+            width: 15%;
             }
         }
         .m4 .icon.icon-inbound, .m4 .icon.icon-outbound {
@@ -802,12 +822,35 @@ footer  {
         }
     }
     .menu   {
-        #menu_burger {
-            right: 5%;
-            top: -1.5%;
-        }
         li > a {
             font-size: 38px;
+        }
+    }
+}
+@media (max-width: 420px) {
+    .pane-three {
+        .pane-three .row:first-of-type .m4:first-of-type h2:before, .pane-three .row:first-of-type .m4:nth-of-type(2) h2:before {
+            top: -70px;
+        }
+        .row:first-of-type .m4 {
+            &:first-of-type h2:before {
+                left: 15px;
+            }
+            &:nth-of-type(2) h2:before {
+                left: -25px;
+            }
+        }
+        .row:nth-of-type(2) .m4 {
+            &:first-of-type h2:before {
+                left: -10px;
+            }
+        }
+    }
+    .pane-one {
+        #heli {
+            top: 50px;
+            left: 55%;
+            width: 30%;
         }
     }
 }
